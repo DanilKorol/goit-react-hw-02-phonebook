@@ -63,7 +63,6 @@ class App extends Component {
 
   render() {
     const { filter } = this.state;
-
     const visibleContacts = this.getVisibleContacts();
 
     return (
@@ -71,8 +70,17 @@ class App extends Component {
         <Title> Phonebook</Title>
         <ContactForm onSubmit={this.addContact} />
         <Caption> Contacts</Caption>
-        <Filter value={filter} onChange={this.changeFilter} />
-        <ContactList contacts={visibleContacts} onDelete={this.deleteContact} />
+        {visibleContacts.length === 0 ? (
+          <h3>Your contacts is empty</h3>
+        ) : (
+          <>
+            <Filter value={filter} onChange={this.changeFilter} />
+            <ContactList
+              contacts={visibleContacts}
+              onDelete={this.deleteContact}
+            />
+          </>
+        )}
       </Container>
     );
   }
