@@ -16,7 +16,7 @@ export const Label = styled.label`
 export const Btn = styled.button`
   max-width: 100px;
   padding: 5px;
-  border: 1px solid #fff
+  border: 1px solid #fff;
   background-color: #a69bd1;
   border-radius: 5px;
   cursor: pointer;
